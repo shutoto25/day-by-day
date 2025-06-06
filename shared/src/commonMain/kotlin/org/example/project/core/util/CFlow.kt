@@ -48,4 +48,4 @@ class CFlow<T: Any> internal constructor(private val origin: Flow<T>) : Flow<T> 
  * @param T Flowの要素の型
  * @return CFlowインスタンス
  */
-internal fun <T: Any> Flow<T>.wrap(): CFlow<T> = CFlow(this)
+public fun <T: Any> Flow<T>.wrap(): CFlow<T> = CFlow(this)

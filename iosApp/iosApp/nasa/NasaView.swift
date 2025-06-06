@@ -98,7 +98,7 @@ class NasaViewModel: ObservableObject {
     init() {
         // AppDependenciesからNasaStoreを取得
         self.store = AppDependencies.shared.nasaStore
-        self.state = store.observeState().value as! NasaState
+        self.state = store.getCurrentState() as! NasaState
 
         stateWatcher = store.watchState().watch { [weak self] state in
             self?.state = state as! NasaState

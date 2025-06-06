@@ -1,4 +1,4 @@
-rootProject.name = "kmp-nasa-api"
+rootProject.name = "day-by-day"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
