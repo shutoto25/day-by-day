@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.example.project.nasa.NasaScreen
+import org.example.project.DiaryHomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,10 @@ class MainActivity : ComponentActivity() {
 fun AppNavigation() {
     val navController = rememberNavController()
     
-    NavHost(navController = navController, startDestination = "nasa") {
+    NavHost(navController = navController, startDestination = "diary_home") {
+        composable("diary_home") {
+            DiaryHomeScreen()
+        }
         composable("nasa") {
             NasaScreen()
         }
