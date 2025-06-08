@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.example.project.diary.DiaryRepository
+import org.example.project.diary.DiaryRepositoryImpl
 import org.example.project.diary.data.DiaryData
 
 /**
@@ -20,7 +20,7 @@ import org.example.project.diary.data.DiaryData
  */
 @Composable
 fun DiaryHomeScreen() {
-    val diaryList: List<DiaryData> = DiaryRepository().getAllDiaries()
+    val diaryList: List<DiaryData> = DiaryRepositoryImpl().getAllDiaries()
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.fillMaxSize()) {
             Text(
