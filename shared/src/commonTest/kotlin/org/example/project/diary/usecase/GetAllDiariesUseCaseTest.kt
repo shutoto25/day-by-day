@@ -21,7 +21,7 @@ class GetAllDiariesUseCaseTest {
     }
 
     @Test
-    fun `全件取得でリストサイズが2件である`() {
+    fun 全件取得でリストサイズが2件である() {
         // Given: ダミーリポジトリとユースケース
         val useCase = GetAllDiariesUseCase(DummyDiaryRepository())
         // When: ユースケースを実行

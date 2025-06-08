@@ -44,6 +44,10 @@ kotlin {
             implementation(libs.kotlinx.datetime)
         }
 
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+        }
+
         // Android固有の依存関係
         androidMain.dependencies {
             //Network
