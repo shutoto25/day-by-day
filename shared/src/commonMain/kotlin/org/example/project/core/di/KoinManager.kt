@@ -22,7 +22,6 @@ fun initKoin(): KoinApplication {
 fun getAllModules(): List<Module> {
     return listOf(
         commonModule,
-        nasaModule,
         platformModule()
     )
 }
