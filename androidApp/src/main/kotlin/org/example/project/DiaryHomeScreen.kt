@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.example.project.diary.DiaryRepository
+import org.example.project.diary.data.DiaryData
 
 /**
  * ホーム画面（日記グリッド一覧）
@@ -18,10 +20,7 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun DiaryHomeScreen() {
-    val dummyDates = listOf(
-        "2024-06-01", "2024-06-02", "2024-06-03", "2024-06-04",
-        "2024-06-05", "2024-06-06", "2024-06-07", "2024-06-08"
-    )
+    val diaryList: List<DiaryData> = DiaryRepository().getAllDiaries()
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.fillMaxSize()) {
             Text(
@@ -34,7 +33,7 @@ fun DiaryHomeScreen() {
                 modifier = Modifier.padding(8.dp).fillMaxSize(),
                 contentPadding = PaddingValues(8.dp)
             ) {
-                items(dummyDates) { date ->
+                items(diaryList) { diary ->
                     Box(
                         modifier = Modifier
                             .padding(8.dp)
@@ -42,7 +41,7 @@ fun DiaryHomeScreen() {
                             .height(120.dp),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = date)
+                        Text(text = diary.date)
                     }
                 }
             }
