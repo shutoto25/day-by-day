@@ -8,24 +8,21 @@ alwaysApply: true
 このファイルでは、AndroidやiOSなどOS固有となるUI実装に関するルールをまとめます。
 
 ## Android固有UI
-- `androidMain`配下でのみ実装すること。
-- kJetpack ComposeやAndroid Viewなど、Android標準のUIフレームワークを利用する。
-- 可能な限り宣言的UI（Jetpack Compose）を優先する。
+- `androidMain`配下でのみ実装する。
+- UIフレームワークはJetpack Composeを利用する。
 - OS固有のリソース（色・画像・文字列）は`res`ディレクトリで管理する。
 
 ## iOS固有UI
-- `iosMain`配下でのみ実装すること。
-- SwiftUIやUIKitなど、iOS標準のUIフレームワークを利用する。
-- 可能な限り宣言的UI（SwiftUI）を優先する。
+- `iosMain`配下でのみ実装する。
+- UIフレームワークはSwiftUIを利用する。
 - OS固有のリソース（色・画像・文字列）はXcodeプロジェクトで管理する。
 
 ## 共通事項
-- OS固有UIのロジックは、共通コードと明確に分離する。
+- ViewModelを使ってUIとUIロジックの明確に分離する。
 - 共通インターフェースやexpect/actual構成を活用し、共通部分と連携する。
-- コメントやドキュメントで、なぜOS固有実装が必要かを明記する。
-- 画面構成方針
+- 画面構成方針は以下の通り。
   - Screen: 画面
-    - viewmodelへのアクセスはここのみ。
+    - viewmodelへのアクセスできるのはこのレイヤーまでとする。
   - Content: Screen直下
   - Section: 画面幅いっぱいの要素
   - Component: セクションより小さな要素
