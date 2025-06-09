@@ -8,7 +8,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.example.project.diary.DiaryRepositoryImpl
@@ -34,15 +33,7 @@ fun DiaryHomeScreen() {
                 contentPadding = PaddingValues(8.dp)
             ) {
                 items(diaryList) { diary ->
-                    Box(
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxWidth()
-                            .height(120.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = diary.date)
-                    }
+                    DateGridItem(diary = diary)
                 }
             }
         }
