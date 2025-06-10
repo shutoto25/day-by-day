@@ -7,12 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.example.project.diary.DiaryHomeViewModel
-import org.example.project.diary.usecase.GetAllDiariesUseCase
-import org.example.project.diary.DiaryRepositoryImpl
-import org.example.project.core.util.DateUtils
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import org.example.project.diary.DiaryHomeViewModel
+import org.koin.compose.koinInject
 
 /**
  * ホーム画面（日記グリッド一覧）
@@ -20,7 +18,7 @@ import androidx.compose.runtime.getValue
  */
 @Composable
 fun DiaryHomeScreen() {
-    val viewModel = DiaryHomeViewModel(GetAllDiariesUseCase(DiaryRepositoryImpl()))
+    val viewModel: DiaryHomeViewModel = koinInject()
     val state by viewModel.state.collectAsState()
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.fillMaxSize()) {
