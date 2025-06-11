@@ -9,7 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import org.example.project.diary.DiaryHomeViewModel
 import org.koin.compose.koinInject
 
 /**

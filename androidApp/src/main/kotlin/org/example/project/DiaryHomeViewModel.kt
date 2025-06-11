@@ -1,5 +1,6 @@
-package org.example.project.diary
+package org.example.project
 
+import androidx.lifecycle.ViewModel
 import org.example.project.diary.data.DiaryData
 import org.example.project.diary.usecase.GetAllDiariesUseCase
 import org.example.project.core.util.DateUtils
@@ -22,7 +23,7 @@ data class DiaryHomeState(
  */
 class DiaryHomeViewModel(
     private val getAllDiariesUseCase: GetAllDiariesUseCase
-) {
+) : ViewModel() {
     private val _state = MutableStateFlow(DiaryHomeState())
     val state: StateFlow<DiaryHomeState> = _state
 

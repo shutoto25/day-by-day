@@ -8,7 +8,6 @@ import org.example.project.core.storage.AndroidPlatformStorage
 import org.example.project.core.storage.PlatformStorage
 import org.koin.core.module.Module
 import org.koin.dsl.module
-import org.example.project.diary.DiaryHomeViewModel
 
 /**
  * Android固有のモジュール設定
@@ -25,5 +24,4 @@ actual fun platformModule(): Module = module {
             context.getSharedPreferences("app_storage", Context.MODE_PRIVATE)
         )
     }
-    single { DiaryHomeViewModel(get()) }
 }
