@@ -8,7 +8,11 @@ import androidx.compose.runtime.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import org.example.project.home.DiaryHomeScreen
 
+/**
+ * エントリーポイントかつSingleActivityのメインアクティビティ
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

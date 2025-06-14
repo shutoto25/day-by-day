@@ -1,4 +1,4 @@
-package org.example.project
+package org.example.project.home
 
 import androidx.lifecycle.ViewModel
 import org.example.project.diary.data.DiaryData
