@@ -56,10 +56,9 @@ kotlin {
             implementation(libs.koin.android)
             // russhwolf
             implementation(libs.multiplatform.settings)
-            // androix
+            // androidx
             implementation(libs.androidx.core)
         }
-
 
         // iOSd固有の依存関係
         iosMain.dependencies {

@@ -1,4 +1,4 @@
-package org.example.project.storage
+package org.example.project.datasource.local
 
 /**
  * プラットフォーム固有のストレージ操作を定義するインターフェイス
@@ -10,4 +10,4 @@ interface PlatformStorage {
     fun clear()
 }
 
-//expect fun createPlatformStorage(): PlatformStorage
+expect fun createPlatformStorage(): PlatformStorage

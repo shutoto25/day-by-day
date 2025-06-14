@@ -1,6 +1,6 @@
-package org.example.project.diary
+package org.example.project.data
 
-import org.example.project.diary.data.DiaryData
+import org.example.project.data.DiaryData
 
 /**
  * 日記データ取得用リポジトリインターフェース

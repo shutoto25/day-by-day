@@ -1,6 +1,5 @@
-package org.example.project.storage
+package org.example.project.datasource.local
 
-import org.example.project.core.storage.PlatformStorage
 import platform.Foundation.NSUserDefaults
 
 /**

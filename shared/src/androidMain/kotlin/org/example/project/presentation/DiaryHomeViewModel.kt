@@ -1,8 +1,8 @@
 package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
-import org.example.project.diary.data.DiaryData
-import org.example.project.diary.usecase.GetAllDiariesUseCase
+import org.example.project.data.DiaryData
+import org.example.project.domain.usecase.GetAllDiariesUseCase
 import org.example.project.util.DateUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -1,7 +1,7 @@
-package org.example.project.diary.usecase
+package org.example.project.domain.usecase
 
-import org.example.project.diary.DiaryRepository
-import org.example.project.diary.data.DiaryData
+import org.example.project.data.DiaryRepository
+import org.example.project.data.DiaryData
 
 /**
  * 全日記データを取得するユースケース

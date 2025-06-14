@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.example.project.diary.data.DiaryData
+import org.example.project.data.DiaryData
 
 /**
  * 日記グリッド一覧Section

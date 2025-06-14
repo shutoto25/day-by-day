@@ -1,4 +1,4 @@
-package org.example.project.diary.data
+package org.example.project.data
 
 import kotlinx.serialization.Serializable
 
@@ -13,4 +13,4 @@ data class DiaryData(
     val date: String,
     val content: String,
     val photoUrl: String? = null
-) 
+)

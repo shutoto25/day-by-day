@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import org.example.project.diary.data.DiaryData
+import org.example.project.data.DiaryData
 
 /**
  * グリッド1セル分の日付アイテム

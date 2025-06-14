@@ -4,13 +4,13 @@ import android.content.Context
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.SharedPreferencesSettings
 import io.ktor.client.*
-import org.example.project.storage.AndroidPlatformStorage
+import org.example.project.datasource.local.AndroidPlatformStorage
 import org.example.project.presentation.AddEntryViewModel
 import org.example.project.presentation.DiaryHomeViewModel
 import org.example.project.presentation.ReflectionVideoViewModel
 import org.example.project.presentation.SettingsViewModel
 import org.example.project.presentation.TimelineViewModel
-import org.example.project.storage.PlatformStorage
+import org.example.project.datasource.local.PlatformStorage
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
