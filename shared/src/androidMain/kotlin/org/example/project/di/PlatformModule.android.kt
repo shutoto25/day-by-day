@@ -19,7 +19,8 @@ import org.koin.dsl.module
  * Android固有のモジュール設定
  */
 actual fun platformModule(): Module = module {
-    listOf(dataModule() + presentationModule())
+    includes(dataModule())
+    includes(presentationModule())
 }
 
 private fun dataModule(): Module = module {
