@@ -1,4 +1,4 @@
-package org.example.project.timeline
+package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

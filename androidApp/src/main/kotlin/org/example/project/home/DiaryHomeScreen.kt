@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import org.example.project.presentation.DiaryHomeViewModel
 import org.koin.compose.koinInject
 
 /**
@@ -16,8 +17,7 @@ import org.koin.compose.koinInject
  * @author shutoto25
  */
 @Composable
-fun DiaryHomeScreen() {
-    val viewModel: DiaryHomeViewModel = koinInject()
+fun DiaryHomeScreen(viewModel: DiaryHomeViewModel = koinInject()) {
     val state by viewModel.state.collectAsState()
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.fillMaxSize()) {

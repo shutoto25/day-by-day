@@ -4,7 +4,6 @@ import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.context.stopKoin
 import org.koin.core.module.Module
-import org.koin.dsl.module
 
 /**
  * Koin初期化関数
@@ -22,7 +21,7 @@ fun initKoin(): KoinApplication {
 fun getAllModules(): List<Module> {
     return listOf(
         commonModule,
-        platformModule()
+        platformModule(),
     )
 }
 

@@ -1,8 +1,9 @@
-package org.example.project.reflectionvideo
+package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -76,7 +77,7 @@ class ReflectionVideoViewModel @Inject constructor(
                 // val newVideo = generateReflectionVideoUseCase()
                 
                 // Simulate video generation process
-                kotlinx.coroutines.delay(3000) // Simulate processing time
+                delay(3000) // Simulate processing time
                 
                 val newVideo = ReflectionVideoUi(
                     id = "generated_${System.currentTimeMillis()}",
@@ -117,7 +118,7 @@ class ReflectionVideoViewModel @Inject constructor(
                 // playVideoUseCase(videoId)
                 
                 // For now, just simulate playback by clearing the playing state after a delay
-                kotlinx.coroutines.delay(1000)
+                delay(1000)
                 _uiState.value = _uiState.value.copy(
                     currentPlayingVideoId = null
                 )

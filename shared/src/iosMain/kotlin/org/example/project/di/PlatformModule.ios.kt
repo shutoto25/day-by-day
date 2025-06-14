@@ -1,10 +1,9 @@
-package org.example.project.core.di
+package org.example.project.di
 
 import io.ktor.client.*
 import io.ktor.client.engine.darwin.*
-import kotlinx.serialization.json.Json
 import org.example.project.core.storage.PlatformStorage
-import org.example.project.core.storage.createPlatformStorage
+import org.example.project.storage.createPlatformStorage
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

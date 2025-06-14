@@ -1,12 +1,16 @@
-package org.example.project.settings
+package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 
 data class SettingsUiState(
@@ -127,12 +131,12 @@ class SettingsViewModel @Inject constructor(
                 // backupUseCase.execute()
                 
                 // Simulate backup process
-                kotlinx.coroutines.delay(2000)
+                delay(2000)
                 
-                val currentTime = java.text.SimpleDateFormat(
+                val currentTime = SimpleDateFormat(
                     "yyyy/MM/dd HH:mm", 
-                    java.util.Locale.getDefault()
-                ).format(java.util.Date())
+                    Locale.getDefault()
+                ).format(Date())
                 
                 _uiState.value = _uiState.value.copy(
                     isBackingUp = false,
@@ -168,7 +172,7 @@ class SettingsViewModel @Inject constructor(
                 // restoreUseCase.execute()
                 
                 // Simulate restore process
-                kotlinx.coroutines.delay(3000)
+                delay(3000)
                 
                 _uiState.value = _uiState.value.copy(isRestoring = false)
             } catch (e: Exception) {

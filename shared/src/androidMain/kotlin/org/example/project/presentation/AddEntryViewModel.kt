@@ -1,13 +1,12 @@
-package org.example.project.addentry
+package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 data class AddEntryUiState(
     val title: String = "",
@@ -21,9 +20,8 @@ data class AddEntryUiState(
     val canSave: Boolean = false
 )
 
-@HiltViewModel
-class AddEntryViewModel @Inject constructor(
-    // TODO: Inject repository and use cases
+class AddEntryViewModel(
+    // TODO: Inject repository and use cases (Koinでmoduleに登録する)
     // private val saveDiaryEntryUseCase: SaveDiaryEntryUseCase
 ) : ViewModel() {
 
@@ -80,7 +78,7 @@ class AddEntryViewModel @Inject constructor(
                 // saveDiaryEntryUseCase(entry)
                 
                 // Simulate network delay
-                kotlinx.coroutines.delay(1000)
+                delay(1000)
                 
                 _uiState.value = _uiState.value.copy(
                     isLoading = false,

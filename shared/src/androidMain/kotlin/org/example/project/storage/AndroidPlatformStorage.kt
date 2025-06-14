@@ -1,7 +1,8 @@
-package org.example.project.core.storage
+package org.example.project.storage
 
 import android.content.Context
 import androidx.core.content.edit
+import org.example.project.core.storage.PlatformStorage
 
 
 class AndroidPlatformStorage(private val context: Context) : PlatformStorage {
@@ -27,6 +28,6 @@ class AndroidPlatformStorage(private val context: Context) : PlatformStorage {
 /**
  * Android環境では実際に呼ばれないが、expect/actual規約を満たすために提供
  */
-actual fun createPlatformStorage(): PlatformStorage {
-    error("Android環境ではこのメソッドは使用されません。代わりにKoinのDIを使用してください。")
-}
+//actual fun createPlatformStorage(): PlatformStorage {
+//    error("Android環境ではこのメソッドは使用されません。代わりにKoinのDIを使用してください。")
+//}

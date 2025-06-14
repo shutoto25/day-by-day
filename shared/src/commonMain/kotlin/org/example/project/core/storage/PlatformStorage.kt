@@ -10,4 +10,4 @@ interface PlatformStorage {
     fun clear()
 }
 
-expect fun createPlatformStorage(): PlatformStorage
+//expect fun createPlatformStorage(): PlatformStorage

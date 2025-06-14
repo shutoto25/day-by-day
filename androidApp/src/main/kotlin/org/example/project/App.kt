@@ -1,7 +1,7 @@
 package org.example.project
 
 import android.app.Application
-import org.example.project.core.di.initKoinAndroid
+import org.example.project.di.initKoinAndroid
 
 class App : Application() {
 
