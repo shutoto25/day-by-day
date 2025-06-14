@@ -1,4 +1,4 @@
-package org.example.project.datasource.remote.network
+package org.example.project.datasource.remote
 
 import io.ktor.client.*
 import io.ktor.client.request.*
