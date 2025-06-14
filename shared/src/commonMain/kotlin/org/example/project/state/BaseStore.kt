@@ -1,4 +1,4 @@
-package org.example.project.core.state
+package org.example.project.state
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

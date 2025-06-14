@@ -1,4 +1,4 @@
-package org.example.project.core.di
+package org.example.project.di
 
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module

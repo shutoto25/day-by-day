@@ -2,7 +2,6 @@ package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -11,7 +10,6 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import javax.inject.Inject
 
 data class SettingsUiState(
     // Notification Settings
@@ -48,13 +46,7 @@ data class SettingsUiState(
     val error: String? = null
 )
 
-@HiltViewModel
-class SettingsViewModel @Inject constructor(
-    // TODO: Inject repository and use cases
-    // private val settingsRepository: SettingsRepository,
-    // private val backupUseCase: BackupUseCase,
-    // private val restoreUseCase: RestoreUseCase
-) : ViewModel() {
+class SettingsViewModel () : ViewModel() {
 
     private val _uiState = MutableStateFlow(SettingsUiState())
     val uiState: StateFlow<SettingsUiState> = _uiState.asStateFlow()

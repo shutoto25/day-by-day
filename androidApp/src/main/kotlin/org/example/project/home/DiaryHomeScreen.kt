@@ -10,14 +10,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import org.example.project.presentation.DiaryHomeViewModel
-import org.koin.compose.koinInject
+import org.koin.androidx.compose.koinViewModel
 
 /**
  * ホーム画面（日記グリッド一覧）
  * @author shutoto25
  */
 @Composable
-fun DiaryHomeScreen(viewModel: DiaryHomeViewModel = koinInject()) {
+fun DiaryHomeScreen(
+    viewModel: DiaryHomeViewModel = koinViewModel()
+) {
     val state by viewModel.state.collectAsState()
     Surface(color = MaterialTheme.colors.background) {
         Column(modifier = Modifier.fillMaxSize()) {

@@ -2,13 +2,11 @@ package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import java.util.*
-import javax.inject.Inject
 
 data class DiaryEntryUi(
     val id: String,
@@ -37,11 +35,7 @@ data class TimelineUiState(
     val error: String? = null
 )
 
-@HiltViewModel
-class TimelineViewModel @Inject constructor(
-    // TODO: Inject repository and use cases
-    // private val getDiaryEntriesUseCase: GetDiaryEntriesUseCase
-) : ViewModel() {
+class TimelineViewModel() : ViewModel() {
 
     private val _uiState = MutableStateFlow(TimelineUiState())
     val uiState: StateFlow<TimelineUiState> = _uiState.asStateFlow()

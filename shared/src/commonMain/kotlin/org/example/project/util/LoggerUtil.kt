@@ -1,6 +1,6 @@
-package org.example.project.core.util
+package org.example.project.util
 
-import org.example.project.core.util.DateUtils.createTiemestamp
+import org.example.project.util.DateUtils.createTiemestamp
 
 internal expect fun platformLog(level: String, tag: String, message: String)
 

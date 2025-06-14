@@ -1,7 +1,7 @@
 package org.example.project.di
 
 import android.content.Context
-import org.example.project.core.di.initKoin
+import org.example.project.di.initKoin
 import org.koin.android.ext.koin.androidContext
 
 /**

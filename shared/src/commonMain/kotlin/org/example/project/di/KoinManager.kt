@@ -1,4 +1,4 @@
-package org.example.project.core.di
+package org.example.project.di
 
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -9,7 +9,7 @@ import org.koin.core.module.Module
  * Koin初期化関数
  */
 fun initKoin(): KoinApplication {
-    stopKoin()
+//    stopKoin()
     return startKoin {
         modules(getAllModules())
     }

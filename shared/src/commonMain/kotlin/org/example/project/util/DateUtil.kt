@@ -1,4 +1,4 @@
-package org.example.project.core.util
+package org.example.project.util
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone

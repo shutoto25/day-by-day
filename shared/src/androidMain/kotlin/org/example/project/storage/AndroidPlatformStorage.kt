@@ -2,7 +2,6 @@ package org.example.project.storage
 
 import android.content.Context
 import androidx.core.content.edit
-import org.example.project.core.storage.PlatformStorage
 
 
 class AndroidPlatformStorage(private val context: Context) : PlatformStorage {

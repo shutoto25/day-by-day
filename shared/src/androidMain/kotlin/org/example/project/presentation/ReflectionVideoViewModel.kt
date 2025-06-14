@@ -2,13 +2,11 @@ package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 data class ReflectionVideoUi(
     val id: String,
@@ -29,13 +27,7 @@ data class ReflectionVideoUiState(
     val error: String? = null
 )
 
-@HiltViewModel
-class ReflectionVideoViewModel @Inject constructor(
-    // TODO: Inject repository and use cases
-    // private val getReflectionVideosUseCase: GetReflectionVideosUseCase,
-    // private val generateReflectionVideoUseCase: GenerateReflectionVideoUseCase,
-    // private val playVideoUseCase: PlayVideoUseCase
-) : ViewModel() {
+class ReflectionVideoViewModel() : ViewModel() {
 
     private val _uiState = MutableStateFlow(ReflectionVideoUiState())
     val uiState: StateFlow<ReflectionVideoUiState> = _uiState.asStateFlow()

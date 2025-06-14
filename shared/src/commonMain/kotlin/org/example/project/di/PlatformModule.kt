@@ -1,4 +1,4 @@
-package org.example.project.core.di
+package org.example.project.di
 
 import org.koin.core.module.Module
 

@@ -1,4 +1,4 @@
-package org.example.project.core.network
+package org.example.project.network
 
 import io.ktor.client.*
 import io.ktor.client.request.*

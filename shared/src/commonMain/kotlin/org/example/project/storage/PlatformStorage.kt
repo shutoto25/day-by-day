@@ -1,4 +1,4 @@
-package org.example.project.core.storage
+package org.example.project.storage
 
 /**
  * プラットフォーム固有のストレージ操作を定義するインターフェイス

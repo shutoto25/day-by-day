@@ -5,12 +5,12 @@ import com.russhwolf.settings.Settings
 import com.russhwolf.settings.SharedPreferencesSettings
 import io.ktor.client.*
 import org.example.project.storage.AndroidPlatformStorage
-import org.example.project.core.storage.PlatformStorage
 import org.example.project.presentation.AddEntryViewModel
 import org.example.project.presentation.DiaryHomeViewModel
 import org.example.project.presentation.ReflectionVideoViewModel
 import org.example.project.presentation.SettingsViewModel
 import org.example.project.presentation.TimelineViewModel
+import org.example.project.storage.PlatformStorage
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -18,11 +18,11 @@ import org.koin.dsl.module
 /**
  * Android固有のモジュール設定
  */
-actual fun platformModule() = module {
-    listOf(coreModule() + viewModelModule())
+actual fun platformModule(): Module = module {
+    listOf(dataModule() + presentationModule())
 }
 
-private fun coreModule(): Module = module {
+private fun dataModule(): Module = module {
     // PlatformStorage
     single<PlatformStorage> { AndroidPlatformStorage(get()) }
     // HttpClient
@@ -36,7 +36,7 @@ private fun coreModule(): Module = module {
     }
 }
 
-private fun viewModelModule(): Module = module {
+private fun presentationModule(): Module = module {
     viewModel { DiaryHomeViewModel(get()) }
     viewModel { AddEntryViewModel() }
     viewModel { ReflectionVideoViewModel() }

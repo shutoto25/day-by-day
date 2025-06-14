@@ -5,11 +5,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import org.example.project.presentation.ReflectionVideoViewModel
-import org.koin.compose.koinInject
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun ReflectionVideoScreen(
-    viewModel: ReflectionVideoViewModel = koinInject()
+    viewModel: ReflectionVideoViewModel = koinViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
