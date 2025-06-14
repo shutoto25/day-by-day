@@ -17,14 +17,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import org.koin.androidx.compose.koinViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReflectionVideoScreen(
-    viewModel: ReflectionVideoViewModel = hiltViewModel()
+    viewModel: ReflectionVideoViewModel = koinViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsState()
     
