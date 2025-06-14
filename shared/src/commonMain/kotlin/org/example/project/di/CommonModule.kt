@@ -2,7 +2,7 @@ package org.example.project.di
 
 import kotlinx.serialization.json.Json
 import org.koin.dsl.module
-import org.example.project.data.DiaryRepository
+import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryRepositoryImpl
 import org.example.project.domain.usecase.GetAllDiariesUseCase
 

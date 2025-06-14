@@ -1,6 +1,6 @@
 package org.example.project.domain.usecase
 
-import org.example.project.data.DiaryRepository
+import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryData
 
 /**

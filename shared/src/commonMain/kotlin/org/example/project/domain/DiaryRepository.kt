@@ -1,4 +1,4 @@
-package org.example.project.data
+package org.example.project.domain
 
 import org.example.project.data.DiaryData
 
@@ -12,4 +12,4 @@ interface DiaryRepository {
      * @return 日記データリスト
      */
     fun getAllDiaries(): List<DiaryData>
-} 
+}

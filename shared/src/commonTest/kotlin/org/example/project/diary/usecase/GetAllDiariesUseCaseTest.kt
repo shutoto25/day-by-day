@@ -1,6 +1,6 @@
 package org.example.project.diary.usecase
 
-import org.example.project.data.DiaryRepository
+import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryData
 import org.example.project.domain.usecase.GetAllDiariesUseCase
 import kotlin.test.Test
