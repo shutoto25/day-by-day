@@ -4,7 +4,7 @@ import kotlinx.serialization.json.Json
 import org.koin.dsl.module
 import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryRepositoryImpl
-import org.example.project.domain.usecase.GetAllDiariesUseCase
+import org.example.project.domain.GetAllDiariesUseCase
 
 // 両プラットフォー用の共通モジュール設定
 val commonModule = module {

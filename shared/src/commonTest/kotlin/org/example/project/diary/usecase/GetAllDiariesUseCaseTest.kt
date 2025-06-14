@@ -2,7 +2,7 @@ package org.example.project.diary.usecase
 
 import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryData
-import org.example.project.domain.usecase.GetAllDiariesUseCase
+import org.example.project.domain.GetAllDiariesUseCase
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

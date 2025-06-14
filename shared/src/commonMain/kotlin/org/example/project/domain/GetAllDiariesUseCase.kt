@@ -1,16 +1,17 @@
-package org.example.project.domain.usecase
+package org.example.project.domain
 
-import org.example.project.domain.DiaryRepository
 import org.example.project.data.DiaryData
 
 /**
  * 全日記データを取得するユースケース
  * @property diaryRepository 日記リポジトリ
  */
-class GetAllDiariesUseCase(private val diaryRepository: DiaryRepository) {
+class GetAllDiariesUseCase(
+    private val diaryRepository: DiaryRepository
+) {
     /**
      * 全日記データを取得する
      * @return 日記データリスト
      */
-    fun execute(): List<DiaryData> = diaryRepository.getAllDiaries()
+    operator fun invoke(): List<DiaryData> = diaryRepository.getAllDiaries()
 } 

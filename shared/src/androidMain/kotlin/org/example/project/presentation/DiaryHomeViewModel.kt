@@ -2,7 +2,7 @@ package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
 import org.example.project.data.DiaryData
-import org.example.project.domain.usecase.GetAllDiariesUseCase
+import org.example.project.domain.GetAllDiariesUseCase
 import org.example.project.util.DateUtils
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -36,7 +36,7 @@ class DiaryHomeViewModel(
      */
     fun loadDiaries() {
         CoroutineScope(Dispatchers.Default).launch {
-            val diaries = getAllDiariesUseCase.execute()
+            val diaries = getAllDiariesUseCase()
             val allDates = DateUtils.getDatesOfCurrentMonth()
             val diaryMap = diaries.associateBy { it.date }
             val fullGridList = allDates.map { date ->
