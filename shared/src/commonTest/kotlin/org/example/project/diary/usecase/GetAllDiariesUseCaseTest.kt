@@ -26,7 +26,7 @@ class GetAllDiariesUseCaseTest {
         // Given: ダミーリポジトリとユースケース
         val useCase = GetAllDiariesUseCase(DummyDiaryRepository())
         // When: ユースケースを実行
-        val diaries = useCase.execute()
+        val diaries = useCase()
         // Then: 結果のサイズが2である
         assertEquals(2, diaries.size)
     }
@@ -34,14 +34,14 @@ class GetAllDiariesUseCaseTest {
     @Test
     fun `最初の要素の日付が2024-06-01である`() {
         val useCase = GetAllDiariesUseCase(DummyDiaryRepository())
-        val diaries = useCase.execute()
+        val diaries = useCase()
         assertEquals("2024-06-01", diaries[0].date)
     }
 
     @Test
     fun `2件目の本文がテスト日記2である`() {
         val useCase = GetAllDiariesUseCase(DummyDiaryRepository())
-        val diaries = useCase.execute()
+        val diaries = useCase()
         assertEquals("テスト日記2", diaries[1].content)
     }
 } 
