@@ -22,7 +22,7 @@ fun DiaryGridSection(
     modifier: Modifier = Modifier
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
+        columns = GridCells.Fixed(3),
         modifier = modifier
             .padding(8.dp)
             .fillMaxSize(),

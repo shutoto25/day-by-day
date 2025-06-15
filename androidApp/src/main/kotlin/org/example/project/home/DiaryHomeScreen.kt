@@ -21,14 +21,24 @@ fun DiaryHomeScreen(
     viewModel: DiaryHomeViewModel = koinViewModel()
 ) {
     val state by viewModel.state.collectAsState()
-    Surface(color = MaterialTheme.colors.background) {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Text(
-                text = "日記一覧",
-                style = MaterialTheme.typography.h5,
-                modifier = Modifier.padding(16.dp)
-            )
-            DiaryGridSection(diaryList = state.fullGridList)
+    Column(modifier = Modifier.fillMaxSize()) {
+        when {
+            state.isLoading -> {
+                // ローディング中のUIを表示
+                Text(
+                    text = "Loading...",
+                    style = MaterialTheme.typography.h6,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+            else -> {
+                Text(
+                    text = "日記一覧",
+                    style = MaterialTheme.typography.h5,
+                    modifier = Modifier.padding(16.dp)
+                )
+                DiaryGridSection(diaryList = state.diaryDataList)
+            }
         }
     }
 }

@@ -8,14 +8,21 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 /**
  * ホーム画面の状態
  */
 data class DiaryHomeState(
-    val fullGridList: List<DiaryData> = emptyList()
+    val diaryDataList: List<DiaryData> = emptyList(),
+    val isLoading: Boolean = false
 )
+
+sealed interface DiaryHomeEvent {
+    data object Load : DiaryHomeEvent
+}
 
 /**
  * ホーム画面用ViewModel（MVIパターン）
@@ -28,21 +35,39 @@ class DiaryHomeViewModel(
     val state: StateFlow<DiaryHomeState> = _state
 
     init {
-        loadDiaries()
+        // 初期化時に日記一覧をロード
+        handleEvent(DiaryHomeEvent.Load)
+    }
+
+    /**
+     * イベントを処理するメソッド
+     * @param event DiaryHomeEvent イベント
+     */
+    fun handleEvent(event: DiaryHomeEvent) {
+        when (event) {
+            is DiaryHomeEvent.Load -> loadDiaries()
+        }
     }
 
     /**
      * 日記一覧を取得し、今月分の全日付とマージして状態に反映
      */
-    fun loadDiaries() {
+    private fun loadDiaries() {
+        _state.update { it.copy(isLoading = true) }
         CoroutineScope(Dispatchers.Default).launch {
+            delay(3000)
             val diaries = getAllDiariesUseCase()
             val allDates = DateUtils.getDatesOfCurrentMonth()
             val diaryMap = diaries.associateBy { it.date }
             val fullGridList = allDates.map { date ->
                 diaryMap[date] ?: DiaryData(date = date, content = "", photoUrl = null)
             }
-            _state.value = DiaryHomeState(fullGridList = fullGridList)
+            _state.update { currentState ->
+                currentState.copy(
+                    diaryDataList = fullGridList,
+                    isLoading = false
+                )
+            }
         }
     }
 } 
