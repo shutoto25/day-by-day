@@ -1,6 +1,7 @@
 package org.example.project.presentation
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import org.example.project.data.DiaryData
 import org.example.project.domain.GetAllDiariesUseCase
 import org.example.project.util.DateUtils
@@ -54,19 +55,26 @@ class DiaryHomeViewModel(
      */
     private fun loadDiaries() {
         _state.update { it.copy(isLoading = true) }
-        CoroutineScope(Dispatchers.Default).launch {
-            delay(3000)
-            val diaries = getAllDiariesUseCase()
-            val allDates = DateUtils.getDatesOfCurrentMonth()
-            val diaryMap = diaries.associateBy { it.date }
-            val fullGridList = allDates.map { date ->
-                diaryMap[date] ?: DiaryData(date = date, content = "", photoUrl = null)
-            }
-            _state.update { currentState ->
-                currentState.copy(
-                    diaryDataList = fullGridList,
-                    isLoading = false
-                )
+        viewModelScope.launch {
+            try {
+                delay(3000)
+                val diaries = getAllDiariesUseCase()
+                val allDates = DateUtils.getDatesOfCurrentMonth()
+                val diaryMap = diaries.associateBy { it.date }
+                val fullGridList = allDates.map { date ->
+                    diaryMap[date] ?: DiaryData(date = date, content = "", photoUrl = null)
+                }
+                _state.update { currentState ->
+                    currentState.copy(
+                        diaryDataList = fullGridList,
+                        isLoading = false
+                    )
+                }
+            }catch (e: Exception) {
+                // エラーハンドリング（ログ出力など）
+                _state.update { currentState ->
+                    currentState.copy(isLoading = false)
+                }
             }
         }
     }
